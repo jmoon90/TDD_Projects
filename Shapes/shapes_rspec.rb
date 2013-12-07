@@ -1,12 +1,9 @@
-require 'pry'
 require_relative 'shapes'
 require_relative 'square'
 require_relative 'rectangle'
 require_relative 'circle'
 require_relative 'triangle'
 require_relative 'trapezoid'
-
-require 'rspec'
 
 describe Square do
   it 'calculates the squares area' do
