@@ -1,4 +1,3 @@
-require 'pry'
 require_relative 'liability'
 
 class TaxCalculator
@@ -14,8 +13,8 @@ class TaxCalculator
       @tax_rate = (employee.tax_rate.to_f / 100) 
       @annual_income = employee.annual_income.to_f
       @tax_paid = employee.tax_paid.to_f
-      @tax_owed = employee.tax_owed #+ @liability.tax_owed
-      @tax_due = employee.tax_due #+ @liability.tax_due
+      @tax_owed = employee.tax_owed 
+      @tax_due = employee.tax_due 
       calculate_liability
       owed = @liability.tax_owed
       due = @liability.tax_due
