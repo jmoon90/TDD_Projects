@@ -1,12 +1,14 @@
-
+require 'pry'
 class Employee
-  attr_reader :first_name, :last_name, :annual_income, :tax_paid, :tax_rate
+  attr_reader :first_name, :last_name, :annual_income, :tax_paid, :tax_rate, :employee, :tax_owed, :tax_due
   def initialize(attributes)
-    @first_name = attributes.fetch('first_name') { 'missing' }
-    @last_name = attributes.fetch('last_name') {'missing'}
-    @annual_income = attributes.fetch('annual_income') {0}
-    @tax_paid = attributes.fetch('tax_paid') {0}
-    @tax_rate = attributes.fetch('tax_rate') {0}
+    @first_name = attributes['first_name'] || ('missing')
+    @last_name = attributes['last_name'] || ('missing')
+    @annual_income = attributes['annual_income'] || (0)
+    @tax_paid = attributes['tax_paid'] || (0)
+    @tax_rate = attributes['tax_rate'] || (0)
+    @tax_due = attributes['tax_due'] || (0)
+    @tax_owed = attributes['tax_owed'] || (0)
   end
 
   def self.load_data(file)
