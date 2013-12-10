@@ -2,7 +2,7 @@ class WordCount
   def initialize(sentence)
     @sentence = sentence
   end
-  
+
   def frequency
     word_counter = Hash.new(0)
     @sentence.split(' ').each do |word|
